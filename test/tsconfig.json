@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": false,
+    "inlineSourceMap": true,
+    "lib": ["es6", "dom"],
+    "declaration": false,
+    "outDir": "dist",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "typeRoots": [
+      "typings",
+      "../node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "mocha",
+      "chai"
+    ]
+  },
+  "filesGlob": [
+    "src/**/*.ts",
+    "!node_modules/**"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test",
+    "defs"
+  ]
+}
