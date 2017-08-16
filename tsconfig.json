@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es6",
+    "sourceMap": false,
+    "inlineSourceMap": true,
+    "lib": ["es2015", "es2016", "es2017", "dom"],
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "outDir": "compiled",
+    "typeRoots": [
+      "typings",
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "mocha",
+      "chai"
+    ]
+  },
+  "filesGlob": [
+    "src/**/*.ts",
+    "gen/**/*.ts",
+    "node_modules/antlr4ts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test",
+    "defs"
+  ]
+}

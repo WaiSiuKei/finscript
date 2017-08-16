@@ -1,0 +1,16 @@
+node_modules/
+.antlr/
+gen/
+compiled/
+.idea/
+.tmp/
+coverage/
+dist/
+test/results
+defs/**/*.js
+dist/
+out/
+.DS_Store
+.vscode
+
+*.log
