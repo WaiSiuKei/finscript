@@ -285,7 +285,7 @@ true_range = MAX(H - L, H - prevLow, L - prevClose)
 
 ### Indicator
 
-Checkout [demo](https://github.com/finscript/src/page/indicators.ts)
+Checkout [demo](https://github.com/WaiSiuKei/finscript/blob/gh-pages/page/indicators.ts)
 
 ### Built-in funciton
 #### Number
