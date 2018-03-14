@@ -19,10 +19,13 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        loaders: [
-          'ts-loader'
-        ]
-      }
+        loaders: ['babel-loader', 'ts-loader']
+      },
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /(node_modules(?!(\/|\\)antlr4ts)|scripts|libs)/,
+      },
     ]
   },
   plugins: [
@@ -35,15 +38,15 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   output: {comments: false},
-    //   compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      output: {comments: false},
+      compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
+    }),
     new webpack.LoaderOptionsPlugin({
       options: {
         resolve: {},
         ts: {
-          configFileName: 'tsconfig.json'
+          configFile: 'tsconfig.json'
         },
         tslint: {
           configuration: require('../tslint.json')

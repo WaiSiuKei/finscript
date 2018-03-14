@@ -17,10 +17,13 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        loaders: [
-          'ts-loader'
-        ]
-      }
+        loaders: ['babel-loader', 'ts-loader']
+      },
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /(node_modules(?!(\/|\\)antlr4ts)|scripts|libs)/,
+      },
     ]
   },
   plugins: [
@@ -35,7 +38,7 @@ module.exports = {
       options: {
         resolve: {},
         ts: {
-          configFileName: 'tsconfig.json'
+          configFile: 'tsconfig.json'
         },
         tslint: {
           configuration: require('../tslint.json')
